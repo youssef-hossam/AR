@@ -1,6 +1,8 @@
 import 'package:ar/constants.dart';
 import 'package:ar/core/utils/app_router.dart';
 import 'package:ar/core/utils/assets.dart';
+import 'package:ar/if_condition/presentation/views/widgets/color_points.dart';
+import 'package:ar/if_condition/presentation/views/widgets/number_step.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -38,7 +40,7 @@ class IfCondtionView extends StatelessWidget {
                     child: Column(
                       children: [
                         const Text(
-                          '🧠 if',
+                          '🧠',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 22,
@@ -64,13 +66,13 @@ class IfCondtionView extends StatelessWidget {
                           style: TextStyle(fontSize: 18, height: 1.5),
                         ),
                         const SizedBox(height: 16),
-                        _coloredPoint('🟢',
+                        coloredPoint('🟢',
                             'لو الحاجة رقم (زي 5 أو 100)، البوكس يبقى أخضر.'),
-                        _coloredPoint('🔵',
+                        coloredPoint('🔵',
                             'لو الحاجة كلام (زي "يوسف" أو "سلام")، البوكس يبقى أزرق.'),
-                        _coloredPoint('🟡',
+                        coloredPoint('🟡',
                             'لو الحاجة صح أو غلط (true أو false)، البوكس يبقى أصفر.'),
-                        _coloredPoint(
+                        coloredPoint(
                             '⚪', 'لو مش أي واحدة من دول، يبقى البوكس رمادي.'),
                         const SizedBox(height: 24),
                         const Text(
@@ -84,10 +86,10 @@ class IfCondtionView extends StatelessWidget {
                           style: TextStyle(fontSize: 18),
                         ),
                         const SizedBox(height: 12),
-                        _numberedStep('1', 'هل الحاجة دي رقم؟ ✅ خليه أخضر'),
-                        _numberedStep('2', 'طب هل هي كلام؟ ✅ خليه أزرق'),
-                        _numberedStep('3', 'طب هل هي صح أو غلط؟ ✅ خليه أصفر'),
-                        _numberedStep('4', 'لو مش أي حاجة من دول ❌ خليه رمادي'),
+                        numberedStep('1', 'هل الحاجة دي رقم؟ ✅ خليه أخضر'),
+                        numberedStep('2', 'طب هل هي كلام؟ ✅ خليه أزرق'),
+                        numberedStep('3', 'طب هل هي صح أو غلط؟ ✅ خليه أصفر'),
+                        numberedStep('4', 'لو مش أي حاجة من دول ❌ خليه رمادي'),
                         const SizedBox(height: 24),
                         const Text(
                           '🧑‍💻 الكود في البرنامج بيكون كده:',
@@ -154,44 +156,6 @@ class IfCondtionView extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  static Widget _coloredPoint(String emoji, String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(emoji, style: const TextStyle(fontSize: 20)),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              text,
-              style: const TextStyle(fontSize: 18, height: 1.4),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  static Widget _numberedStep(String number, String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 6),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('🔹 $number.', style: const TextStyle(fontSize: 18)),
-          const SizedBox(width: 6),
-          Expanded(
-            child: Text(
-              text,
-              style: const TextStyle(fontSize: 18, height: 1.4),
-            ),
-          ),
-        ],
       ),
     );
   }

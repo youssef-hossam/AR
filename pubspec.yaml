@@ -28,8 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  # ar_flutter_plugin: ^0.7.3
   arcore_flutter_plugin: ^0.1.0
+  chewie: 1.7.5
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
@@ -39,14 +39,9 @@ dependencies:
   go_router: ^14.2.3
   google_fonts: ^5.1.0
   permission_handler: ^11.3.1
+  video_player: 2.9.1
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_test:
     sdk: flutter
 
@@ -63,6 +58,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/videos/
     - Models/Chicken_01/
     - Models/adamHead/
   #   - images/a_dot_ham.jpeg
