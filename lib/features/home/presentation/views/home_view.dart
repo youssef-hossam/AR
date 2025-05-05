@@ -4,7 +4,6 @@ import 'package:ar/core/utils/assets.dart';
 import 'package:ar/core/widgets/custom_button.dart';
 
 import 'package:ar/if_condition/presentation/views/if_condtion_view.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -57,12 +56,11 @@ class HomeView extends StatelessWidget {
                       fontSize: 35.sp, color: kPrimaryColor),
                   onTap: () {
                     // GoRouter.of(context).push(AppRouter.ifConditionView);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => LocalAndWebObjectsWidget(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IfCondtionView()),
+                    );
                   }),
               SizedBox(
                 height: 20.h,

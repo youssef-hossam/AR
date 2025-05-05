@@ -1,6 +1,8 @@
 import 'package:ar/features/home/presentation/views/home_view.dart';
 import 'package:ar/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:ar/features/variables/presentation/views/variables_view.dart';
+import 'package:ar/if_condition/presentation/views/if_condition_ar_view.dart';
+
 import 'package:ar/programming/presentation/views/programming_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -10,6 +12,7 @@ class AppRouter {
   static String variablesView = "/variables";
   static String ifConditionView = "/IfConditionView";
   static String programmingView = "/ProgrammingView";
+  static String ifConditionArView = "/IfConditionArView";
 
   static GoRouter router = GoRouter(
     routes: [
@@ -39,13 +42,13 @@ class AppRouter {
         path: variablesView,
         builder: (context, state) => const VariablesView(),
       ),
-      // GoRoute(
-      //   path: ifConditionView,
-      //   builder: (context, state) => const IfConditionView(),
-      // ),
       GoRoute(
         path: programmingView,
         builder: (context, state) => const ProgrammingView(),
+      ),
+      GoRoute(
+        path: ifConditionArView,
+        builder: (context, state) => IfConditionArView(),
       ),
     ],
   );
