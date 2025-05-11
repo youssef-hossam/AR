@@ -1,8 +1,10 @@
 import 'package:ar/constants.dart';
+import 'package:ar/core/utils/app_router.dart';
 import 'package:ar/core/utils/assets.dart';
 import 'package:ar/features/variables/presentation/views/widgets/example_points.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VariablesView extends StatelessWidget {
@@ -99,6 +101,9 @@ class VariablesView extends StatelessWidget {
               ),
               SizedBox(height: 20.h),
               GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.variableArView);
+                },
                 child: Container(
                   width: 100.w,
                   height: 50.h,

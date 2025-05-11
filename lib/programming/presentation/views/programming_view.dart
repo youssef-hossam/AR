@@ -1,48 +1,16 @@
 import 'package:ar/constants.dart';
+import 'package:ar/core/utils/app_router.dart';
 import 'package:ar/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 
-class ProgrammingView extends StatefulWidget {
+class ProgrammingView extends StatelessWidget {
   const ProgrammingView({super.key});
-
-  @override
-  State<ProgrammingView> createState() => _ProgrammingViewState();
-}
-
-class _ProgrammingViewState extends State<ProgrammingView> {
-  late VideoPlayerController _videoPlayerController;
-  ChewieController? _chewieController;
-
-  @override
-  void initState() {
-    super.initState();
-    _videoPlayerController =
-        VideoPlayerController.asset('assets/videos/programming.mp4');
-    _videoPlayerController.initialize().then((_) {
-      _chewieController = ChewieController(
-        videoPlayerController: _videoPlayerController,
-        autoPlay: true,
-        looping: false,
-        aspectRatio: _videoPlayerController.value.aspectRatio,
-        allowFullScreen: true,
-        allowPlaybackSpeedChanging: true,
-        showControls: true,
-      );
-      setState(() {});
-    });
-  }
-
-  @override
-  void dispose() {
-    _videoPlayerController.dispose();
-    _chewieController?.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,19 +35,37 @@ class _ProgrammingViewState extends State<ProgrammingView> {
                   borderRadius: BorderRadius.circular(20.r),
                   color: Colors.white,
                 ),
-                child: _chewieController != null &&
-                        _chewieController!
-                            .videoPlayerController.value.isInitialized
-                    ? SizedBox(
-                        height: 200,
-                        width: 200,
-                        child: Chewie(
-                          controller: _chewieController!,
-                        ))
-                    : const CircularProgressIndicator(),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          '🧠',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          "Programming is how we tell the computer what to do, like writing commands that make it draw, play, or solve problems.\n"
+                          "💡 It's like giving instructions to a robot to perform specific tasks, and when we write these instructions correctly, the computer executes them precisely.\n",
+                          style: TextStyle(fontSize: 18, height: 1.6),
+                        ),
+                        Text(
+                          "  البرمجة هي الطريقة اللي بنقول بيها للكمبيوتر يعمل إيه، زي لما نكتب أوامر بتخليه يرسم، يلعب، أو يحل مشكلة. 💡 تخيل إنك بتدي تعليمات لروبوت علشان يعمل حاجة معينة، ولما تكتب التعليمات صح، الكمبيوتر بينفذها بدقة",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 18, height: 1.6),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
               SizedBox(height: 20.h),
               GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.programmingVideoView);
+                },
                 child: Container(
                   width: 100.w,
                   height: 50.h,
