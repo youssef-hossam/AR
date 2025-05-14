@@ -1,4 +1,3 @@
-import 'package:ar/constants.dart';
 import 'package:ar/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,29 +59,32 @@ class _ProgrammingVideoViewState extends State<ProgrammingVideoView> {
                     GoogleFonts.aBeeZee(fontSize: 45.sp, color: Colors.white),
               ),
               SizedBox(height: 15.h),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.65,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  color: Colors.white,
-                ),
-                child: _chewieController != null &&
-                        _chewieController!
-                            .videoPlayerController.value.isInitialized
-                    ? FittedBox(
-                        fit: BoxFit.contain, // أو contain لو تحب
-                        child: SizedBox(
-                          height: 200,
-                          width: 200,
+              Spacer(
+                flex: 1,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    color: Colors.white,
+                  ),
+                  child: _chewieController != null &&
+                          _chewieController!
+                              .videoPlayerController.value.isInitialized
+                      ? AspectRatio(
+                          aspectRatio: _chewieController!
+                              .videoPlayerController.value.aspectRatio,
                           child: Chewie(
                             controller: _chewieController!,
                           ),
-                        ),
-                      )
-                    : const CircularProgressIndicator(),
+                        )
+                      : const Center(child: CircularProgressIndicator()),
+                ),
               ),
-              SizedBox(height: 20.h),
+              Spacer(
+                flex: 2,
+              ),
             ],
           ),
         ),

@@ -73,7 +73,7 @@ class _VariableBoxArViewState extends State<VariableBoxArView> {
       name: "object_inside",
       object3DFileName: "toucan.sfb",
       position: vector.Vector3(0, 0.1, -1), // وسط مكان الصندوق
-      scale: vector.Vector3(0.2, 0.2, 0.2),
+      scale: vector.Vector3(0.4, 0.4, 0.4), // حجم المجسم
     ));
   }
 
