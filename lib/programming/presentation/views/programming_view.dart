@@ -27,47 +27,170 @@ class ProgrammingView extends StatelessWidget {
                 style:
                     GoogleFonts.aBeeZee(fontSize: 45.sp, color: Colors.white),
               ),
-              SizedBox(height: 15.h),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.65,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  color: Colors.white,
-                ),
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          '🧠',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
+              SizedBox(height: 15.h), Spacer(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        // height: MediaQuery.of(context).size.height * 0.65,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                          color: Colors.white,
                         ),
-                        const SizedBox(height: 12),
-                        Text(
-                          "Programming is how we tell the computer what to do, like writing commands that make it draw, play, or solve problems.\n"
-                          "💡 It's like giving instructions to a robot to perform specific tasks, and when we write these instructions correctly, the computer executes them precisely.\n",
-                          style: TextStyle(fontSize: 18, height: 1.6),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              SizedBox(height: 16),
+                              Text(
+                                "Programming is how we tell the computer what to do, like writing commands that make it draw, play, or solve problems.\n\n"
+                                "💡 It's like giving instructions to a robot to perform specific tasks, and when we write these instructions correctly, the computer executes them precisely.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 18, height: 1.6),
+                              ),
+                            ],
+                          ),
                         ),
-                        Text(
-                          "  البرمجة هي الطريقة اللي بنقول بيها للكمبيوتر يعمل إيه، زي لما نكتب أوامر بتخليه يرسم، يلعب، أو يحل مشكلة. 💡 تخيل إنك بتدي تعليمات لروبوت علشان يعمل حاجة معينة، ولما تكتب التعليمات صح، الكمبيوتر بينفذها بدقة",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 18, height: 1.6),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        // height: MediaQuery.of(context).size.height * 0.65,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              SizedBox(height: 16),
+                              Text(
+                                "البرمجة هي الطريقة اللي بنقول بيها للكمبيوتر يعمل إيه، زي لما نكتب أوامر بتخليه يرسم، يلعب، أو يحل مشكلة.\n\n"
+                                "💡 تخيل إنك بتدي تعليمات لروبوت علشان يعمل حاجة معينة، ولما تكتب التعليمات صح، الكمبيوتر بينفذها بدقة.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 18, height: 1.6),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
+              Spacer(),
+
+              // Container(
+              //   width: MediaQuery.of(context).size.width * 0.8,
+              //   height: MediaQuery.of(context).size.height * 0.65,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(20.r),
+              //     color: Colors.white,
+              //   ),
+              //   child: Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child:
+
+              //           // Column(
+              //           //   children: [
+              //           //     Text(
+              //           //       '🧠',
+              //           //       style: TextStyle(
+              //           //           fontSize: 22, fontWeight: FontWeight.bold),
+              //           //     ),
+              //           //     const SizedBox(height: 12),
+              //           //     Text(
+              //           //       "Programming is how we tell the computer what to do, like writing commands that make it draw, play, or solve problems.\n"
+              //           //       "💡 It's like giving instructions to a robot to perform specific tasks, and when we write these instructions correctly, the computer executes them precisely.\n",
+              //           //       style: TextStyle(fontSize: 18, height: 1.6),
+              //           //     ),
+              //           //     Text(
+              //           //       "  البرمجة هي الطريقة اللي بنقول بيها للكمبيوتر يعمل إيه، زي لما نكتب أوامر بتخليه يرسم، يلعب، أو يحل مشكلة. 💡 تخيل إنك بتدي تعليمات لروبوت علشان يعمل حاجة معينة، ولما تكتب التعليمات صح، الكمبيوتر بينفذها بدقة",
+              //           //       textAlign: TextAlign.center,
+              //           //       style: TextStyle(fontSize: 18, height: 1.6),
+              //           //     ),
+              //           //   ],
+              //           // ),
+
+              //           Column(
+              //         children: [
+              //           Text(
+              //             '🧠',
+              //             style: TextStyle(
+              //                 fontSize: 30, fontWeight: FontWeight.bold),
+              //           ),
+              //           SizedBox(
+              //             height: MediaQuery.of(context).size.height * 0..h,
+              //             child: PageView(
+              //               scrollDirection: Axis.horizontal,
+              //               children: [
+              //                 // 🟦 الصفحة الإنجليزية
+              //                 Padding(
+              //                   padding:
+              //                       const EdgeInsets.symmetric(horizontal: 16),
+              //                   child: Column(
+              //                     mainAxisAlignment: MainAxisAlignment.center,
+              //                     children: const [
+              //                       SizedBox(height: 16),
+              //                       Text(
+              //                         "Programming is how we tell the computer what to do, like writing commands that make it draw, play, or solve problems.\n\n"
+              //                         "💡 It's like giving instructions to a robot to perform specific tasks, and when we write these instructions correctly, the computer executes them precisely.",
+              //                         textAlign: TextAlign.center,
+              //                         style:
+              //                             TextStyle(fontSize: 18, height: 1.6),
+              //                       ),
+              //                     ],
+              //                   ),
+              //                 ),
+
+              //                 // 🟩 الصفحة العربية
+              //                 Padding(
+              //                   padding:
+              //                       const EdgeInsets.symmetric(horizontal: 16),
+              //                   child: Column(
+              //                     mainAxisAlignment: MainAxisAlignment.center,
+              //                     children: const [
+              //                       // Text(
+              //                       //   '🧠',
+              //                       //   style: TextStyle(
+              //                       //       fontSize: 30,
+              //                       //       fontWeight: FontWeight.bold),
+              //                       // ),
+              //                       SizedBox(height: 16),
+              //                       Text(
+              //                         "البرمجة هي الطريقة اللي بنقول بيها للكمبيوتر يعمل إيه، زي لما نكتب أوامر بتخليه يرسم، يلعب، أو يحل مشكلة.\n\n"
+              //                         "💡 تخيل إنك بتدي تعليمات لروبوت علشان يعمل حاجة معينة، ولما تكتب التعليمات صح، الكمبيوتر بينفذها بدقة.",
+              //                         textAlign: TextAlign.center,
+              //                         style:
+              //                             TextStyle(fontSize: 18, height: 1.6),
+              //                       ),
+              //                     ],
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           )
+              //         ],
+              //       )),
+              // ),
+
               SizedBox(height: 20.h),
               GestureDetector(
                 onTap: () {
                   GoRouter.of(context).push(AppRouter.programmingVideoView);
                 },
                 child: Container(
-                  width: 100.w,
+                  width: 120.w,
                   height: 50.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
@@ -75,13 +198,14 @@ class ProgrammingView extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      'AR',
+                      'Video',
                       style: GoogleFonts.pottaOne(
                           fontSize: 32.sp, color: kPrimaryColor),
                     ),
                   ),
                 ),
-              )
+              ),
+              Spacer()
             ],
           ),
         ),

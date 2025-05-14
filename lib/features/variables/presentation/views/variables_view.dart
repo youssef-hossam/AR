@@ -27,7 +27,7 @@ class VariablesView extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Container(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: MediaQuery.of(context).size.width * 0.85,
                 height: MediaQuery.of(context).size.height * 0.65,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
@@ -58,10 +58,10 @@ class VariablesView extends StatelessWidget {
                               fontSize: 22, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 12),
-                        examplePoint('تخيل إن عندك بوكس اسمه "name".'),
-                        examplePoint('في الأول، تحط فيه الاسم "Reya".'),
-                        examplePoint(
-                            'بعد شوية، ممكن تغيّر اللي جواه وتحط اسم تاني زي "Ali".'),
+                        examplePoint(' "birdame"تخيل إن عندك بوكس اسمه '),
+                        examplePoint('"parrot" تحط فيه الاسم.'),
+                        // examplePoint(
+                        //     'بعد شوية، ممكن تغيّر اللي جواه وتحط اسم تاني زي "Ali".'),
                         const SizedBox(height: 24),
                         const Text(
                           '🧑‍💻 شكل الكود هيكون كده',
@@ -77,7 +77,7 @@ class VariablesView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Text(
-                            '''String name = "Reya";\nname = "Ali";''',
+                            '''String birdName = "parrot" ''',
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'monospace',
