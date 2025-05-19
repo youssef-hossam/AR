@@ -22,7 +22,16 @@ class _IfConditionArViewState extends State<IfConditionArView> {
   @override
   void initState() {
     super.initState();
-    Permission.camera.request();
+    _requestCameraPermission();
+  }
+
+  Future<void> _requestCameraPermission() async {
+    final status = await Permission.camera.request();
+    if (status.isGranted) {
+      debugPrint("Camera permission granted");
+    } else {
+      debugPrint("Camera permission denied");
+    }
   }
 
   @override

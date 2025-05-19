@@ -16,11 +16,20 @@ class _VariableBoxArViewState extends State<VariableBoxArView> {
   late ArCoreController arCoreController;
 
   @override
-  void initState() {
-    super.initState();
-    Permission.camera.request();
-  }
 
+void initState() {
+  super.initState();
+  _requestCameraPermission();
+}
+
+Future<void> _requestCameraPermission() async {
+  final status = await Permission.camera.request();
+  if (status.isGranted) {
+    debugPrint("Camera permission granted");
+  } else {
+    debugPrint("Camera permission denied");
+  }
+}
   @override
   void dispose() {
     arCoreController.dispose();

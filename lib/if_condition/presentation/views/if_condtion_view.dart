@@ -34,99 +34,64 @@ class IfCondtionView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.r),
                   color: Colors.white,
                 ),
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height *
+                        0.7, // حسب التصميم المطلوب
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
                       children: [
-                        const Text(
+                        // 🧠 الفكرة الأولى
+                        _buildCard(
+                          context,
                           '🧠',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          "You give the computer a condition, it evaluates to either true or false, and then decides what action to take.\n\n"
+                              "يعني بتقول للكمبيوتر: \"لو حصل كذا، اعمل كذا\"، وهو بيشوف الشرط صح ولا غلط، وبعدها يتصرف.",
                         ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          'You give the computer a condition, it evaluates to either true or false, and then decides what action to take.\n'
-                          'يعني بتقول للكمبيوتر: "لو حصل كذا، اعمل كذا"، وهو بيشوف الشرط صح ولا غلط، وبعدها يتصرف.',
-                          style: TextStyle(fontSize: 18, height: 1.6),
-                        ),
-                        const SizedBox(height: 24),
-                        const Text(
+
+                        // 🎁 الفكرة الأساسية
+                        _buildCard(
+                          context,
                           '🎁 الفكرة الأساسية',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
+                          "تخيل إن عندك بوكس سحري جواه حاجة، وانت مش عارف إيه هي.\n"
+                              "لكن البوكس ذكي! بيشوف الحاجة اللي جواه، وبيتلوّن حسب نوعها:\n\n"
+                              "🟢 لو الحاجة رقم (زي 5 أو 100)، البوكس يبقى أخضر.\n"
+                              "🔵 لو الحاجة كلام (زي \"يوسف\" أو \"سلام\")، البوكس يبقى أزرق.\n"
+                              "🟡 لو الحاجة صح أو غلط (true أو false)، البوكس يبقى أصفر.\n"
+                              "⚪ لو مش أي واحدة من دول، يبقى البوكس رمادي.",
                         ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          'تخيل إن عندك بوكس سحري جواه حاجة، وانت مش عارف إيه هي.\n'
-                          'لكن البوكس ذكي! بيشوف الحاجة اللي جواه، وبيتلوّن حسب نوعها:',
-                          style: TextStyle(fontSize: 18, height: 1.5),
-                        ),
-                        const SizedBox(height: 16),
-                        coloredPoint('🟢',
-                            'لو الحاجة رقم (زي 5 أو 100)، البوكس يبقى أخضر.'),
-                        coloredPoint('🔵',
-                            'لو الحاجة كلام (زي "يوسف" أو "سلام")، البوكس يبقى أزرق.'),
-                        coloredPoint('🟡',
-                            'لو الحاجة صح أو غلط (true أو false)، البوكس يبقى أصفر.'),
-                        coloredPoint(
-                            '⚪', 'لو مش أي واحدة من دول، يبقى البوكس رمادي.'),
-                        const SizedBox(height: 24),
-                        const Text(
+
+                        // 🧠 خطوات التفكير بالـ if
+                        _buildCard(
+                          context,
                           '🧠 خطوات التفكير بالـ if:',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
+                          "الكمبيوتر بيسأل نفسه خطوة خطوة:\n\n"
+                              "1️⃣ هل الحاجة دي رقم؟ ✅ خليه أخضر\n"
+                              "2️⃣ طب هل هي كلام؟ ✅ خليه أزرق\n"
+                              "3️⃣ طب هل هي صح أو غلط؟ ✅ خليه أصفر\n"
+                              "4️⃣ لو مش أي حاجة من دول ❌ خليه رمادي",
                         ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          'الكمبيوتر بيسأل نفسه خطوة خطوة:',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                        const SizedBox(height: 12),
-                        numberedStep('1', 'هل الحاجة دي رقم؟ ✅ خليه أخضر'),
-                        numberedStep('2', 'طب هل هي كلام؟ ✅ خليه أزرق'),
-                        numberedStep('3', 'طب هل هي صح أو غلط؟ ✅ خليه أصفر'),
-                        numberedStep('4', 'لو مش أي حاجة من دول ❌ خليه رمادي'),
-                        const SizedBox(height: 24),
-                        const Text(
+
+                        // 🧑‍💻 الكود في البرنامج
+                        _buildCard(
+                          context,
                           '🧑‍💻 الكود في البرنامج بيكون كده:',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
+                          '''Color _getColorByType(dynamic val) {
+                  if (val is int) return Colors.green;
+                  if (val is String) return Colors.blue;
+                  if (val is bool) return Colors.yellow;
+                  return Colors.grey;
+                }''',
+                          isCode: true,
                         ),
-                        const SizedBox(height: 8),
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            '''Color _getColorByType(dynamic val) {
-                      if (val is int) return Colors.green;
-                      if (val is String) return Colors.blue;
-                      if (val is bool) return Colors.yellow;
-                      return Colors.grey;
-                    }''',
-                            style: TextStyle(
-                              fontSize: 16.sp,
-                              fontFamily: 'monospace',
-                              color: Colors.black87,
-                            ),
-                          ),
+
+                        // الخاتمة
+                        _buildCard(
+                          context,
+                          '🤖',
+                          'كده الكمبيوتر بقى يفهم إزاي يلوّن البوكس حسب الحاجة اللي جواه!',
                         ),
-                        const SizedBox(height: 32),
-                        const Center(
-                          child: Text(
-                            '🤖 كده الكمبيوتر بقى يفهم إزاي يلوّن البوكس حسب الحاجة اللي جواه!',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
-                          ),
-                        )
                       ],
                     ),
                   ),
@@ -153,6 +118,59 @@ class IfCondtionView extends StatelessWidget {
                   ),
                 ),
               )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCard(BuildContext context, String title, String content,
+      {bool isCode = false}) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.8,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 16),
+              isCode
+                  ? Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        content,
+                        style: const TextStyle(
+                          fontFamily: 'monospace',
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
+                  : Text(
+                      content,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 18, height: 1.6),
+                    ),
             ],
           ),
         ),
