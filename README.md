@@ -14,8 +14,18 @@
 </p>
 
 <p align="center">
-  <img src="screenshots/showcase.webp" alt="AR Kids Coding screenshots" width="100%"/>
+  <img src="screenshots/hero.webp" alt="AR Kids Coding" width="100%"/>
 </p>
+
+## 📱 Screens
+
+| Start | Variables | AR scene |
+|:-:|:-:|:-:|
+| <img src="screenshots/5.webp" width="200"/> | <img src="screenshots/6.webp" width="200"/> | <img src="screenshots/1.webp" width="200"/> |
+
+| Variable in AR | 3D objects | If condition |
+|:-:|:-:|:-:|
+| <img src="screenshots/2.webp" width="200"/> | <img src="screenshots/3.webp" width="200"/> | <img src="screenshots/4.webp" width="200"/> |
 
 ## 💡 The idea
 
